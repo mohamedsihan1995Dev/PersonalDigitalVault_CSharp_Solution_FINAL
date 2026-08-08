@@ -1,0 +1,33 @@
+.table-wrap{overflow:auto;border-radius:16px;border:1px solid rgba(226,232,240,.08)}
+.table{width:100%;border-collapse:collapse;min-width:680px;background:rgba(10,15,30,.26)}
+.table th,.table td{padding:15px 16px;border-bottom:1px solid rgba(226,232,240,.07);text-align:left}
+.table th{
+  color:#b9c7d9;
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  background:rgba(226,232,240,.025);
+}
+.table td{color:#dbe5f4;font-size:.9rem}
+.table tbody tr{transition:background var(--transition)}
+.table tbody tr:hover{background:rgba(59,130,246,.045)}
+.table tbody tr:last-child td{border-bottom:0}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:5px 9px;
+  border-radius:999px;
+  color:#dbeafe;
+  background:rgba(59,130,246,.12);
+  border:1px solid rgba(59,130,246,.18);
+  font-size:.75rem;
+  font-weight:800;
+}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.icon-box{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  color:#aecdff;background:rgba(59,130,246,.10);border:1px solid rgba(59,130,246,.16)
+}
+.icon-box svg{width:21px;height:21px}
+.meta-row{display:flex;align-items:center;gap:9px;color:var(--slate-400);font-size:.83rem}
