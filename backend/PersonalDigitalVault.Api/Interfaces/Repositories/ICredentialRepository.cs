@@ -1,4 +1,9 @@
+
+
+
+
 using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
+
 using PersonalDigitalVault.Api.Entities;
 namespace PersonalDigitalVault.Api.Interfaces.Repositories;
 public interface ICredentialRepository
@@ -9,3 +14,4 @@ public interface ICredentialRepository
     Task UpdateAsync(Credential credential);
     Task DeleteAsync(Credential credential);
 }
+

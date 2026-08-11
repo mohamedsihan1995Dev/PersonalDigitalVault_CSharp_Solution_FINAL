@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Search | Personal Digital Vault</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/vault.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar__inner">
+            <a class="brand" href="/html/dashboard.html">
+                <span class="brand-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 10V7a5 5 0 0 1 10 0v3" />
+                        <rect x="5" y="10" width="14" height="11" rx="3" />
+                    </svg>
+                </span><span class="brand-copy">
+                    Personal Digital Vault<small>
+                        Private • Encrypted •
+                        Yours
+                    </small>
+                </span>
+            </a>
+            <nav>
+                <a href="/html/dashboard.html">Dashboard</a><a href="/html/folders.html">Folders</a><a href="/html/documents.html">Documents</a><a href="/html/credentials.html">Credentials</a><a class="active" href="/html/search.html">Search</a><a href="/html/profile.html">Profile</a><button data-logout>
+                    Logout
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <header class="page-header">
+            <div class="page-header__copy">
+                <span class="eyebrow">Find anything</span>
+                <h1>Search your vault</h1>
+                <p class="page-subtitle">
+                    Search only within the folders, documents and credential records that belong to
+                    your account.
+                </p>
+            </div>
+        </header>
+        <section class="card search-card">
+            <form class="search-form">
+                <input name="keyword"
+                       placeholder="Search folders, documents or credential titles"><button>Search</button>
+            </form>
+        </section>
+        <section id="list" class="search-results"></section>
+    </main>
+    <script type="module" src="/js/pages/search.js"></script>
+    <script type="module">import {initNavbar} from '/js/components/navbar.js'; initNavbar();</script>
+</body>
+
+</html>

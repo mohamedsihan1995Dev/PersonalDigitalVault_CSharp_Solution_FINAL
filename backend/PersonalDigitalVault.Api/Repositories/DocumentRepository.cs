@@ -3,6 +3,7 @@ using PersonalDigitalVault.Api.Data;
 using PersonalDigitalVault.Api.Entities;
 using PersonalDigitalVault.Api.Interfaces.Repositories;
 using System.Reflection.Metadata;
+using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
 
 namespace PersonalDigitalVault.Api.Repositories;
 

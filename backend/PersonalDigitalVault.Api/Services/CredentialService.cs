@@ -1,4 +1,6 @@
+
 using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
+
 using PersonalDigitalVault.Api.DTOs.Credential;
 using PersonalDigitalVault.Api.Entities;
 using PersonalDigitalVault.Api.Interfaces.Repositories;
@@ -7,9 +9,10 @@ using PersonalDigitalVault.Api.Security;
 namespace PersonalDigitalVault.Api.Services;
 public class CredentialService(ICredentialRepository repo, CurrentUserService current, AesEncryption aes) : ICredentialService
 {
-    private CredentialDto Map(Credential x, bool reveal = false) => new() { Id = x.Id, Title = x.Title, Username = aes.DecryptString(x.UsernameEncrypted), Password = reveal ? aes.DecryptString(x.PasswordEncrypted) : "••••••••", Website = x.Website, Notes = string.IsNullOrEmpty(x.NotesEncrypted) ? null : aes.DecryptString(x.NotesEncrypted) };
+    private CredentialDto Map(Credential x, bool reveal = false) => new() { Id = x.Id, Title = x.Title, Username = aes.DecryptString(x.UsernameEncrypted), Password = reveal ? aes.DecryptString(x.PasswordEncrypted) : "â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢", Website = x.Website, Notes = string.IsNullOrEmpty(x.NotesEncrypted) ? null : aes.DecryptString(x.NotesEncrypted) };
     public async Task<CredentialDto> CreateAsync(CreateCredentialDto dto) { var x = new Credential { Title = dto.Title.Trim(), UsernameEncrypted = aes.EncryptString(dto.Username), PasswordEncrypted = aes.EncryptString(dto.Password), Website = dto.Website, NotesEncrypted = string.IsNullOrWhiteSpace(dto.Notes) ? null : aes.EncryptString(dto.Notes), UserId = current.UserId }; await repo.AddAsync(x); return Map(x); }
     public async Task<List<CredentialDto>> GetAllAsync() => (await repo.GetByUserAsync(current.UserId)).Select(x => Map(x)).ToList(); public async Task<CredentialDto> GetAsync(int id) => Map(await repo.GetOwnedAsync(id, current.UserId) ?? throw new KeyNotFoundException("Credential not found."), true);
     public async Task<CredentialDto> UpdateAsync(int id, UpdateCredentialDto dto) { var x = await repo.GetOwnedAsync(id, current.UserId) ?? throw new KeyNotFoundException("Credential not found."); x.Title = dto.Title.Trim(); x.UsernameEncrypted = aes.EncryptString(dto.Username); x.PasswordEncrypted = aes.EncryptString(dto.Password); x.Website = dto.Website; x.NotesEncrypted = string.IsNullOrWhiteSpace(dto.Notes) ? null : aes.EncryptString(dto.Notes); x.UpdatedAt = DateTime.UtcNow; await repo.UpdateAsync(x); return Map(x); }
     public async Task DeleteAsync(int id) { var x = await repo.GetOwnedAsync(id, current.UserId) ?? throw new KeyNotFoundException("Credential not found."); await repo.DeleteAsync(x); }
 }
+
