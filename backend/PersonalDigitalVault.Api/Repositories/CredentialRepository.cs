@@ -1,13 +1,19 @@
-<<<<<<< Updated upstream
-=======
+
+
 using Microsoft.EntityFrameworkCore;
+
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
 
 using PersonalDigitalVault.Api.Data;
 using PersonalDigitalVault.Api.Entities;
 using PersonalDigitalVault.Api.Interfaces.Repositories;
 namespace PersonalDigitalVault.Api.Repositories;
 
+
 using CredentialEntity = PersonalDigitalVault.Api.Entities.Credential;
+
 public class CredentialRepository(AppDbContext db) : ICredentialRepository
 {
     public Task<List<Credential>> GetByUserAsync(int userId) => db.Credentials.AsNoTracking().Where(x => x.UserId == userId).OrderBy(x => x.Title).ToListAsync();
@@ -16,4 +22,4 @@ public class CredentialRepository(AppDbContext db) : ICredentialRepository
     public async Task UpdateAsync(Credential credential) { db.Credentials.Update(credential); await db.SaveChangesAsync(); }
     public async Task DeleteAsync(Credential credential) { db.Credentials.Remove(credential); await db.SaveChangesAsync(); }
 }
->>>>>>> Stashed changes
+
