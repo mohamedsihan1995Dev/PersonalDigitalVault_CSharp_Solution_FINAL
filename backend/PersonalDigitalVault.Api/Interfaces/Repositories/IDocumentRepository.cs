@@ -1,6 +1,5 @@
 using PersonalDigitalVault.Api.Entities;
 
-
 namespace PersonalDigitalVault.Api.Interfaces.Repositories;
 
 public interface IDocumentRepository

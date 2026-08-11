@@ -1,6 +1,5 @@
 namespace PersonalDigitalVault.Api.DTOs.Admin;
-
-public class UpdateUserStatusDto
+public class UpdateUserStatusDto 
 {
     // true  = Enable
     // false = Disable
