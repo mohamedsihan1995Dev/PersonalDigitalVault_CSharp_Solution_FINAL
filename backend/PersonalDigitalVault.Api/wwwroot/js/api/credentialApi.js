@@ -1,0 +1,1 @@
+import{api}from'./apiClient.js';export const credentialApi={all:()=>api('/credentials'),get:id=>api(`/credentials/${id}`),create:d=>api('/credentials',{method:'POST',body:JSON.stringify(d)}),update:(id,d)=>api(`/credentials/${id}`,{method:'PUT',body:JSON.stringify(d)}),remove:id=>api(`/credentials/${id}`,{method:'DELETE'})};

@@ -1,22 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Folders | Personal Digital Vault</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/components.css">
-    <link rel="stylesheet" href="/css/vault.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-</head>
-<body>
-    <header class="topbar"><div class="topbar__inner"><a class="brand" href="/html/dashboard.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10V7a5 5 0 0 1 10 0v3" /><rect x="5" y="10" width="14" height="11" rx="3" /></svg></span><span class="brand-copy">Personal Digital Vault<small>Private • Encrypted • Yours</small></span></a><nav><a href="/html/dashboard.html">Dashboard</a><a class="active" href="/html/folders.html">Folders</a><a href="/html/documents.html">Documents</a><a href="/html/credentials.html">Credentials</a><a href="/html/search.html">Search</a><a href="/html/profile.html">Profile</a><button data-logout>Logout</button></nav></div></header>
-    <main class="container">
-        <header class="page-header"><div class="page-header__copy"><span class="eyebrow">Organization</span><h1>Folders</h1><p class="page-subtitle">Create simple categories so your documents stay clean and easy to find.</p></div></header>
-        <section class="action-layout"><aside class="card action-card"><h2>Create a folder</h2><p class="muted">Use a clear name such as Certificates, Identity or Finance.</p><form><div class="field"><label for="folderName">Folder name</label><input id="folderName" name="name" placeholder="e.g. Certificates" required></div><button>Create folder</button></form></aside><section class="card vault-panel"><div class="section-title"><h2>Your folders</h2><span class="badge">Private</span></div><section id="list" class="vault-list"></section></section></section>
-    </main>
-    <script type="module" src="/js/pages/folders.js"></script>
-    <script type="module">import{initNavbar}from'/js/components/navbar.js';initNavbar();</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Folders | Personal Digital Vault</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/layout.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/vault.css"><link rel="stylesheet" href="/css/responsive.css"></head><body>
+<header class="topbar"><div class="topbar__inner"><a class="brand" href="/html/dashboard.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><rect x="5" y="10" width="14" height="11" rx="3"/></svg></span><span class="brand-copy">Personal Digital Vault<small>Private • Encrypted • Yours</small></span></a><nav><a href="/html/dashboard.html">Dashboard</a><a class="active" href="/html/folders.html">Folders</a><a href="/html/documents.html">Documents</a><a href="/html/credentials.html">Credentials</a><a href="/html/search.html">Search</a><a href="/html/profile.html">Profile</a><button data-logout>Logout</button></nav></div></header>
+<main class="container"><header class="page-header"><div class="page-header__copy"><span class="eyebrow">Organization</span><h1>Folders</h1><p class="page-subtitle">Create simple categories so your documents stay clean and easy to find.</p></div></header>
+<section class="action-layout"><aside class="card action-card"><h2>Create a folder</h2><p class="muted">Use a clear name such as Certificates, Identity or Finance.</p><form><div class="field"><label for="folderName">Folder name</label><input id="folderName" name="name" placeholder="e.g. Certificates" required></div><button>Create folder</button></form></aside><section class="card vault-panel"><div class="section-title"><h2>Your folders</h2><span class="badge">Private</span></div><section id="list" class="vault-list"></section></section></section></main>
+<script type="module" src="/js/pages/folders.js"></script><script type="module">import{initNavbar}from'/js/components/navbar.js';initNavbar();</script></body></html>
