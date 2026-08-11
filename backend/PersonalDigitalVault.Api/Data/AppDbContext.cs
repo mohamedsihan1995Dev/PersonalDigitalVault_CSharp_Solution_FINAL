@@ -14,7 +14,8 @@
 //    }
 //}
 
-
+using System.Reflection.Metadata;
+using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
 using Microsoft.EntityFrameworkCore;
 using PersonalDigitalVault.Api.Entities;
 
